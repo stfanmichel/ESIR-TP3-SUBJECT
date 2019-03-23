@@ -22,6 +22,7 @@ Il existe plusieurs modules node de plus haut niveau pour réaliser des serveur 
 
 - Outillage (npm, node, git, curl, postman etc.) : https://slides.com/stephmichel/deck-4#/
 - Express : Le cours sur Express de Benoît.
+- ab : https://slides.com/stephmichel/deck-4#/10
 
 ## Modules node utilisés
 
@@ -37,9 +38,9 @@ Ceci vous permettra également de vous y retrouver lorsque le correctif vous ser
 
 Il existe des modules comme par exemple, express-generator pour vous aider à construire une arborescence de projet Express from sratch.
 C'est un bon outil pour débuter : https://slides.com/stephmichel/deck-4#/4/1
-Cependant, afin de bien comprendre l'organisation en fichier nous l'allons pas utilise cet outils (dans un premier temp).
+Cependant, afin de bien comprendre l'organisation en fichiers, nous l'allons pas utiliser cet outils.
 
-Comme les TP précédents, vous aller initier un nouveau projet GIT/npm (je ne rappelle pas les étapes ici, vous devez commencer à les connaitre).
+Comme les TP précédents, vous aller initier un nouveau projet GIT/npm (je ne rappelle pas les étapes ici, vous devez commencer à les connaitre). Si vraiment vous ne vous en rappelez pas vous les trouverez [ici](https://github.com/stfanmichel/ESIR-TP1#initialisation-dun-projet).
 
 # STEP 1 : Premier service REST avec express
 
@@ -79,7 +80,7 @@ Il n'y a pas besoin pour le moment de gérer la persistance fichier ou BDD des u
 
 ## Rappels Javascript
 
-Cette étape vous emmenera à manipuler des tableaux en Javascript. Voici ici quelques rappels sur des méthodes qui pourront vous être utiles :
+Cette étape vous emmenera à manipuler des tableaux en Javascript. Voici quelques rappels sur des méthodes qui pourront vous être utiles :
 
 Filtrer un tableau : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/filter
 
@@ -138,8 +139,12 @@ Vous allez donc créer un module qui répond à l'interface suivante :
 Lors du chargement de la route dans app.js, vous lui fournirez votre implémentation de l'interface ci-dessus (on utilisera une closure pour cela).
 Modifier ensuite le code de votre "users route" pour utiliser l'interface.
 
-La "users route" n'est maintenant plus dépendante directement du model. On verra dans un prochain TP qu'il s'agit d'une bonne pratique de programmation et que cela facile la réalisation des tests unitaires.
+La "users route" n'est maintenant plus dépendante directement du model. On verra dans un prochain TP qu'il s'agit d'une bonne pratique de programmation et que cela facilite la réalisation des tests unitaires.
 
 Vérifiez à nouveau son fonctionnement à l'aide de curl comme à l'étape 2.
 
 (tag: **TP3-ESIR-STEP3**)
+
+# STEP BONUS : tests de charge avec ab
+
+Utiliser [ab](https://slides.com/stephmichel/deck-4#/10) (Apache Bench Tool) pour tester le comportement de votre API en augmentant progressivement le nombre d'utilisateurs.
